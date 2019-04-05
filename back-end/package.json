@@ -1,0 +1,17 @@
+{
+ "name": "back-end",
+ "version": "1.0.0",
+ "description": "",
+ "main": "index.js",
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "concurrently \"tsc -w\" \"nodemon build/index.ts\" "
+},
+"keywords": [],
+"author": "",
+"license": "ISC",
+"devDependencies": {
+  "concurrently": "^4.1.0",
+  "typescript": "^3.4.1"
+}
+}
