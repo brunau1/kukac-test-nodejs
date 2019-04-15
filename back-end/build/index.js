@@ -1,3 +1,3 @@
 console.log('It works!');
-var nome = '';
-var funcao = function () { return 'ola2'; };
+const nome = '';
+let funcao = () => 'ola2';

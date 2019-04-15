@@ -5,13 +5,17 @@
  "main": "index.js",
  "scripts": {
   "test": "echo \"Error: no test specified\" && exit 1",
-  "start": "concurrently \"tsc -w\" \"nodemon build/index.ts\" "
-},
-"keywords": [],
-"author": "",
-"license": "ISC",
-"devDependencies": {
+  "start": "concurrently \"tsc -w\""
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "devDependencies": {
   "concurrently": "^4.1.0",
-  "typescript": "^3.4.1"
-}
+  "typescript": "^2.0.6"
+ },
+ "dependencies": {
+  "axios": "^0.18.0",
+  "express": "^4.16.4"
+ }
 }
