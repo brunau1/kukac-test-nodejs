@@ -29,7 +29,7 @@ class ParkingControll {
             if (tipo) {
                 if (tipo == 'passeio') {
                     let modelo = request.body.modelo;
-                    let anoDeFabrica = request.body.ano_de_fabrica;
+                    let anoDeFabrica = request.body.anoDeFabrica;
                     let marca = request.body.marca;
                     if (modelo.trim() === '' || !modelo) {
                         erros.push("Digite um modelo válido");
@@ -54,7 +54,7 @@ class ParkingControll {
                     }
                 }
                 else if (tipo == 'moto') {
-                    let numPassageiros = request.body.num_passageiros;
+                    let numPassageiros = request.body.numPassageiros;
                     if (numPassageiros == null || numPassageiros < 1 || numPassageiros > 2) {
                         erros.push("Digite um número válido de passageiros ");
                     }

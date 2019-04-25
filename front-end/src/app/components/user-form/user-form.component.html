@@ -1,0 +1,40 @@
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" id="name" placeholder="Digite seu nome" name="name" [(ngModel)]="requestData.nome" required />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="cep">Cep*</label>
+      <input type="text" class="form-control cep-mask" id="cep" placeholder="Ex.: 00000-000" name="cep" [(ngModel)]="requestData.cep">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <label for="renda">Renda Mensal*</label>
+      <div class="input-group">
+        <span class="input-group-addon align-middle" style="margin-top: 8px; margin-right: 8px;">R$</span>
+        <input type="text" class="form-control ls-mask-money" id="renda" placeholder="Digite sua renda" name="renda" [(ngModel)]="requestData.renda_mensal">
+      </div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="dependentes">Dependentes*</label>
+      <input type="number" class="form-control" id="dependentes" placeholder="Digite o número de dependentes" name="dependentes" [(ngModel)]="requestData.numero_dependentes" required />
+    </div>
+  </div>
+  <div *ngIf="isLoading == false">
+    <button type="submit" class="btn btn-info" (click)="sendData()">Calcular</button>
+  </div>
+  <div *ngIf="isLoading == true">
+    <button class="btn btn-dark" type="button" disabled>
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      Carregando...
+    </button>
+  </div>
+</form>
+
+<div class="alert alert-danger" role="alert" style="margin-top: 30px;" *ngFor="let erro of responseErros.messages" >
+  {{erro}}
+</div>
+
+<app-user-result [data]="responseData" [userImput]="requestData"></app-user-result>

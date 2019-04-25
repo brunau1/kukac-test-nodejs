@@ -8,8 +8,8 @@ class PalindromeControll{
 		var responseData
 		let erros = new Array();
 
-		let firstRange = request.body.first_range
-		let lastRange = request.body.last_range
+		let firstRange = request.body.firstRange
+		let lastRange = request.body.lastRange
 
 		if ( firstRange == null || firstRange == undefined){
 			erros.push( "Digite um número válido para o primeiro intervalo" )
