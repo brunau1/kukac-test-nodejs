@@ -24,15 +24,4 @@ export default class Tour implements TourInterface{
             throw 'your request is missing some parameters';
 
     }
-
-    public toJson(){
-        return{
-            'type': 'passeio',
-            'model': this.model,
-            'yearOfManofacture': this.yearOfManofacture,
-            'doorQuantitie': this.doorQuantitie,
-            'brand': this.brand,
-            'text': this.text
-        };
-    }
 }
