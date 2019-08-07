@@ -5,7 +5,7 @@ export function generatePalindromeNumbers(first: number, last: number): Array<nu
 
     let palindromeValues: Array<number> = Array();
 
-    for (let value: number = startInterval; value < lastInterval; value++)
+    for (let value: number = startInterval; value <= lastInterval; value++)
         if (verifyPalindrome(value)) palindromeValues.push(parseInt(<any>value));
 
     return palindromeValues;
