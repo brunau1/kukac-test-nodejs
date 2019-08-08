@@ -8,6 +8,7 @@ class ApplicationController {
 
     constructor(){
         this.application = express();
+        this.application.use(express.json())
         this.routes();
     }
 
