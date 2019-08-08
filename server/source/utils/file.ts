@@ -5,7 +5,7 @@ export function toJson(data: {}) {
 export async function readFile(archiveName: string) {
     try {
         const data = await fs.readFileSync(archiveName);
-        return data
+        return data.toString()
     } catch (error) {
         return {
             'error': true,
@@ -38,24 +38,29 @@ export async function saveObject(object: {}, archiveName: string) {
             'thrownError': error
         };
     })
-    readFile(archiveName).then((data) => {
-        if (!data)
-            writeFile(archiveName, objectJson).then().catch(error => {
-                return {
-                    'error': true,
-                    'message': 'failed to write file',
-                    'thrownError': error
-                };
-            })
-        else
-            appendFile(archiveName, objectJson).then().catch(error => {
-                return {
-                    'error': true,
-                    'message': 'failed to append file',
-                    'thrownError': error
-                };
-            })
-    }).catch()
+    const data = readFile(archiveName).then().catch(error=>{
+        return {
+            'error': true,
+            'message': 'failed to read file',
+            'thrownError': error
+        };
+    })
+    if (!data)
+        writeFile(archiveName, objectJson).then().catch(error => {
+            return {
+                'error': true,
+                'message': 'failed to write file',
+                'thrownError': error
+            };
+        })
+    else
+        appendFile(archiveName, objectJson).then().catch(error => {
+            return {
+                'error': true,
+                'message': 'failed to append file',
+                'thrownError': error
+            };
+        })
 
     return {
         'error': false,
