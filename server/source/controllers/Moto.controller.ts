@@ -1,17 +1,17 @@
 import { Request, Response } from 'express';
-import { saveObject, readFile } from '../utils/file';
+import { saveFile } from '../utils/file';
 import path from 'path';
 import Moto from '../models/Moto';
+import fs from 'fs';
 const filePath = path.resolve(__dirname,'../../../','database','moto.json');
 
 export default class MotoController {
     public static get(request: Request, response: Response) {
         (async () => {
-            const data: any = await readFile(filePath)
+            const data: any = await fs.readFileSync(filePath)
             if (!!data.error)
                 return response.status(500).send(data);
             else return response.status(200).send({
-                'error': false,
                 'data': JSON.parse(data.toString())
             });
         })();
@@ -22,8 +22,8 @@ export default class MotoController {
         const motoObject: Moto = new Moto(atributes);
         if (!!motoObject) {
             (async () => {
-                const message = await saveObject(atributes, filePath);
-                if (!!message.error) return response.status(500).send(message);
+                const message: any = await saveFile(motoObject.toObject(), filePath);
+                if (message.error == true) return response.status(500).send(message);
                 else return response.status(200).send(message);
             })();
         }

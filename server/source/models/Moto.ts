@@ -34,4 +34,12 @@ export default class Moto implements MotoInterface {
                 'message': 'your request has invalid parameters'
             };
     }
+
+    public toObject(){
+        return{
+            'model': this.model,
+            'passengers': this.passengers,
+            'wheelnumber': this.wheelNumber
+        }
+    }
 }
