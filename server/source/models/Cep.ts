@@ -1,6 +1,6 @@
 export default interface Cep {
-    endereço: string,
-    estado:string,
+    endereço: string
     bairro:string
-    complemento:string
+    cidade: string
+    estado:string
 }
