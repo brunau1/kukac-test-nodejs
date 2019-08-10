@@ -14,7 +14,7 @@ export function generatePalindromeNumbers(first: number, last: number): Array<nu
 export function verifyPalindrome(value: number): boolean {
     const absoluteValue = Math.abs(value);
     const reverseValue = absoluteValue.toString().split('').reverse().join('')
-    const isPalindrome = reverseValue == absoluteValue.toString() ? true : false;
+    const isPalindrome = reverseValue == absoluteValue.toString() || absoluteValue.toString().length > 1 ? true : false;
 
     return isPalindrome;
 }
