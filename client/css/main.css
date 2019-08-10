@@ -2,13 +2,17 @@ body {
     background-color: #f0f2f1;
 }
 
+footer{
+    color: white;
+}
+
 a {
     color: #f4645f;
     text-decoration: none;
 }
 
 a:hover {
-    color: #666666;
+    color: #6c757d;
     text-decoration: none;
 }
 
