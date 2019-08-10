@@ -31,7 +31,7 @@ routes.get('/moto', MotoController.get)
 /* 
 * Cria um objeto da classe moto e salva em um arquivo JSON
 */
-routes.post('/moto/create', MotoController.post)
+routes.post('/moto', MotoController.post)
 
 /* 
 * Retorna um objeto JSON com todos os objetos da classe passeio (tour)
@@ -39,14 +39,14 @@ routes.post('/moto/create', MotoController.post)
 routes.get('/passeio', TourController.get)
 
 /* 
+* Cria um objeto da classe passeio (tour) e salva em um arquivo JSON
+*/
+routes.post('/passeio', TourController.post)
+
+/* 
 * Retorna um objeto JSON com todos os atributos do cep
 */
 routes.get('/cep', CepController.get)
-
-/* 
-* Cria um objeto da classe passeio (tour) e salva em um arquivo JSON
-*/
-routes.post('/passeio/create', TourController.post)
 
 /*
 * Rota default da API - teste
