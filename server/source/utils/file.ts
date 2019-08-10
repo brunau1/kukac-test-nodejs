@@ -19,3 +19,20 @@ export async function saveFile(data: {}, archiveName: string) {
         'message': 'file saved'
     };
 }
+
+export async function readFile(archiveName: string) {
+    try {
+        const fileData = fs.readFileSync(archiveName, 'utf8') || '[]';
+        const objectJson = JSON.parse(fileData.toString());
+        return {
+            'data': objectJson
+        };
+    }
+    catch (error) {
+        return {
+            'error': true,
+            'message': 'failed to read file',
+            'thrownError': error
+        };
+    }
+}
