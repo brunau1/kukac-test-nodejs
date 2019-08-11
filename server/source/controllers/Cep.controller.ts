@@ -11,7 +11,7 @@ export default class CepController {
             return response.status(200).send(data);
         } catch (error) {
             const { status, message } = error;
-            return response.status(status).send({ message });
+            return response.status(status).send(message);
         }
     }
 }
