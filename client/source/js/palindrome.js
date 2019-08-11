@@ -11,13 +11,7 @@ var getPalindromeNumbers = async () => {
                     url: `${host}/palindrome?first=${firstNumber}&last=${lastNumber}`,
                     type: 'get',
                     dataType: 'json',
-                    crossDomain: true,
                     contentType: "application/json",
-                    headers: {
-                        "Accept": 'application/json',
-                        "Access-Control-Allow-Origin": 'http://localhost:3003',
-                        "Access-Control-Allow-Credentials": 'true'
-                    }
                 })
                     .done(data => {
                         resolve(data)
@@ -29,13 +23,15 @@ var getPalindromeNumbers = async () => {
         } catch (error) { return error }
     }
     const palindromes = await asyncGetPalindromes()
+    console.log(palindromes)
     return palindromes
 }
 
 var showPalindromeNumbers = async () => {
     const palindromes = await getPalindromeNumbers()
+    const toString = palindromes.length == 0 ? 'Não há números palíndromos dentro do intervalo informado' : palindromes.join(', ')
     const paragraph = document.querySelector('#show-palindromes')
-    paragraph.innerHTML = palindromes
+    paragraph.innerHTML = toString
 }
 
 document.querySelector('#button-generate').addEventListener('click', showPalindromeNumbers)
