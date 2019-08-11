@@ -6,16 +6,18 @@
   "scripts": {
     "test": "jest",
     "build": "tsc -w",
-    "start": "node build/source/index.js" 
+    "start": "node build/source/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/axios": "^0.14.0",
+    "@types/cors": "^2.8.5",
     "@types/express": "^4.17.0",
     "@types/jest": "^24.0.16",
     "@types/node": "^12.6.9",
     "axios": "^0.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "jest": "^24.8.0",

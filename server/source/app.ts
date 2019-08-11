@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import config from './configuration/app.config'
 import routes from './routes/app.routes'
 
@@ -8,7 +9,8 @@ class ApplicationController {
 
     constructor(){
         this.application = express();
-        this.application.use(express.json())
+        this.application.use(express.json());
+        this.application.use(cors());
         this.routes();
     }
 
