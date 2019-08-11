@@ -7,8 +7,10 @@ footer{
 }
 
 a {
-    color: #f4645f;
+    color: #007bff;
     text-decoration: none;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
 }
 
 a:hover {
@@ -28,16 +30,22 @@ nav h3 {
     margin-bottom: 2em;
 }
 
-.content-part .content-text {
+.content-text {
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: justify;
     padding: 1em 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
-.content-part .content-image {
+.content-image {
     padding: 1em 1em;
+}
+
+.content-part .content-text {
+    margin: 0;
 }
 
 .highlight-text {
@@ -48,7 +56,7 @@ nav h3 {
 }
 
 .bealtiful-text {
-    color: #f4645f;
+    color: #007bff;
 }
 
 .custom-image {
@@ -60,10 +68,12 @@ nav h3 {
     display: inline-grid;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
 .navbar {
     padding-right: 0;
+}
+
+.form-container{
+    padding: 1em 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }

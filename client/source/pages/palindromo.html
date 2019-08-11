@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Home | Developer</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Palindromo | Developer</title>
 </head>
 
 <body>
@@ -32,76 +32,47 @@
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="index.html">
-                <img src="images/kukac-logo.png" width="90" height="50" class="d-inline-block align-top" alt="">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/kukac-logo.png" width="90" height="50" class="d-inline-block align-top" alt="">
             </a>
         </nav>
     </div>
-    <div class="highlight-text">
-        <h1>O que temos aqui?</h1>
-        <span class="text-muted">Aproveite as funcionalidades fornecidas no nosso site</span>
-    </div>
+
     <div class="container">
-        <div class="content-part">
-            <div class="content-text">
-                <h5 class="bealtiful-text">Consulte o seu CEP</h5>
-                <p class="text-muted">Acessando a nossa página <a href="#">consulte seu cep</a>, através do número de
-                    CEP da
-                    sua região ou uma região qualquer, nossa API retornará informações como seu estado, cidade, bairro e
-                    endereço, desde que
-                    sejam fornecidos de acordo com a sua localidade. </p>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="content-text">
+                    <h5 class="bealtiful-text">Números palíndromos</h5>
+                    <p class="text-muted">Os números palíndromos são aqueles que quando lidos normalmente, ou seja,
+                        do inicio ao final, apresentam a mesma notação de quando são lidos do final para o início.</p>
+                    <p class="text-muted">
+                        <span class="bealtiful-text">Exemplo:</span> o número 292 é palíndromo, pois quando lido de trás
+                        para
+                        frente também lê-se 292. Números com apenas um digito não são considerados palíndromos.
+                    </p>
+                    <p class="bealtiful-text">Digite ao lado o primeiro e último número para obter os números
+                        palíndromos dentro do intervalo informado.</p>
+                </div>
             </div>
-            <div class="content-image">
-                <img class="custom-image" src="images/busca-local.jpg">
-            </div>
-        </div>
-
-        <div class="content-part">
-            <div class="content-text">
-                <h5 class="bealtiful-text">Números palíndromos</h5>
-                <p class="text-muted">Acessando a nossa página <a href="pages/palindromo.html">números palíndromos</a>, ao informar os
-                    limites, ou seja, o maior e menor número que formem um intervalo, nossa API retornará os números
-                    palíndromos presentes dentro do intervalo informado. </p>
-            </div>
-            <div class="content-image">
-                <img class="custom-image" src="images/palindromos.png">
-            </div>
-        </div>
-
-        <div class="content-part">
-            <div class="content-text">
-                <h5 class="bealtiful-text">Calcule o troco da sua compra</h5>
-                <p class="text-muted">Acessando a nossa página <a href="#">calcule o troco da sua compra</a>, ao
-                    informar o valor da compra e o valor pago em dinheiro, nossa API retornará o valor do troco e a
-                    quantidade do mesmo em notas de 1, 10 e 100.</p>
-            </div>
-            <div class="content-image">
-                <img class="custom-image" src="images/troco.jpg">
+            <div class="col-md-5">
+                <div class="form-container">
+                    <form>
+                        <div class="form-group">
+                            <label class="bealtiful-text">Primeiro número</label>
+                            <input type="text" class="form-control" id="inputFirstNumber" maxlength="3">
+                        </div>
+                        <div class="form-group">
+                            <label class="bealtiful-text">Último número</label>
+                            <input type="text" class="form-control" id="inputLastNumber" maxlength="3">
+                        </div>
+                    </form>
+                    <button class="btn btn-primary" id="button-generate">Gerar números</button>
+                </div>
             </div>
         </div>
-
-        <div class="content-part">
-            <div class="content-text">
-                <h5 class="bealtiful-text">Cadastre o seu veículo</h5>
-                <p class="text-muted">Acessando a nossa página <a href="#">Cadastre o seu veículo</a>, você irá
-                    preencher um pequeno formulário para cadastrar o seu veículo. Também é possível visualizar os
-                    veículos registrados no sistema.</p>
-            </div>
-            <div class="content-image">
-                <img class="custom-image" src="images/carro.jpg">
-            </div>
-        </div>
-
-        <div class="content-part">
-            <div class="content-text">
-                <h5 class="bealtiful-text">Cadastre a sua moto</h5>
-                <p class="text-muted">Acessando a nossa página <a href="#">Cadastre a sua moto</a>, você irá
-                    preencher um pequeno formulário para cadastrar a sua moto. Também é possível visualizar as motos
-                    registradas no sisitema.</p>
-            </div>
-            <div class="content-image">
-                <img class="custom-image" src="images/moto.jpg">
-            </div>
+        <div class="content-text" style="margin-top: 0;">
+            <h4 class="bealtiful-text">Os números gerados aparecerão aqui:</h4>
+            <p id="show-palindromes"></p>
         </div>
     </div>
 
@@ -150,6 +121,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="../js/palindrome.js"></script>
 </body>
 
 </html>
