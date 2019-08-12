@@ -1,5 +1,27 @@
-# kukac-test-nodejs
-A test that consist to create an project using NodeJS and Angular (more information later)
+# kukac-test-nodejs - Project Docs
+Um teste de programação que consiste na criação de uma API com algumas funcionalidades e a implementação de um front-end para consumir os recursos da API.
+
+# Rodando a aplicação
+
+** Para iniciar a aplicação é necessário ter instalado o <a href="https://nodejs.org/en/download/">NodeJs</a> e o compilador TypeScript na sua máquina.
+
+Em uma pasta de sua escolha, clone a aplicação e aguarde até que os arquivos sejam importados.
+
+```
+git clone https://github.com/brunau1/kukac-test-nodejs.git
+```
+Para rodar a API, acesse a pasta raiz do projeto e, dentro da pasta "server", execute o seguinte comando para instalar as dependências:
+```
+...\kukac-test-nodejs\server> npm i
+```
+Feito isso, dentro da mesma pasta, execute o comando para compilar os arquivos e gerar a pasta ./build:
+```
+...\kukac-test-nodejs\server> tsc
+```
+Agora, basta executar o comando <b>start</b> para iniciar a aplicação:
+```
+...\kukac-test-nodejs\server> npm start
+```
 
 # Kukac Test CLT
 
@@ -48,12 +70,6 @@ O valor da compra e o valor de dinheiro entregue ao caixa deve ser informado pel
     c) Crie a classe “Moto” com os seguintes atributos:
 – Duas rodas
 – Passageiros entre 1 e 2
-
-
-
-
-
-
 
 Deve ser solicitado ao usuário que preencha as informações sobre o seu veículo, os dados devem ser salvos em um arquivo JSON (para não precisar trabalhar com banco de dados, até porquê já vai ser bem próximo de um banco NoSQL);
 
