@@ -8,7 +8,7 @@ export async function consultCep(cep: string): Promise<Cep> {
         if (response.status == 400) throw { 'status': 400, 'message': 'invalid cep' }
         if (!!response.data.erro) throw { 'status': 400, 'message': 'cep dont exists' }
         return {
-            endereço: response.data.logradouro,
+            endereco: response.data.logradouro,
             bairro: response.data.bairro,
             cidade: response.data.localidade,
             estado: response.data.uf
