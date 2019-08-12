@@ -52,7 +52,7 @@ var showElementResults = (id, result) => {
 var hideElementResults = (id) => {
     const cepElement = id.replace('#input', '')
 
-    document.querySelector(`#results${cepElement}`).hidden = false
+    document.querySelector(`#results${cepElement}`).hidden = true
 }
 
 var showCepResults = async () => {
