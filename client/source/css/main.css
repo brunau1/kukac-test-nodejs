@@ -100,3 +100,15 @@ nav h3 {
     width: -webkit-fill-available;
     margin: 0 1em;
 }
+
+@media(max-width: 768px){
+    .content-image{
+        display: none;
+    }
+    .form-container{
+        margin-top: 0;
+    }
+    .content-text{
+        margin-bottom: 0;
+    }
+}
