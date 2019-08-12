@@ -85,3 +85,18 @@ nav h3 {
 .card{
     margin-bottom: 2em;
 }
+
+.message{
+    margin: 1em 1em;
+}
+
+.option-buttons{
+    margin: 1em 1em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.option-buttons button{
+    width: -webkit-fill-available;
+    margin: 0 1em;
+}
