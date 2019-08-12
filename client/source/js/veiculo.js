@@ -78,13 +78,14 @@ var createCards = (vehicles) => {
                 <div class="card-header bealtiful-text">
                     ${item.model.toUpperCase()}
                 </div>
-                <ul class="list-group list-group-flush" id="resultsCepQuatro">
+                <ul class="list-group list-group-flush">
                     <li class="list-group-item bealtiful-text">Marca: ${item.brand}</li>
                     <li class="list-group-item bealtiful-text">Quantidade de portas: ${item.doorQuantitie}</li>
                     <li class="list-group-item bealtiful-text">Ano de fabricação: ${item.yearOfManofacture}</li>
                 </ul>
             </div>
-        </div>`)
+        </div>
+        `)
     })
     return cards
 }
