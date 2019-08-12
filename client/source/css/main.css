@@ -77,3 +77,11 @@ nav h3 {
     margin-top: 2em;
     margin-bottom: 2em;
 }
+
+.form-container .row{
+    justify-content: space-around;
+}
+
+.card{
+    margin-bottom: 2em;
+}
