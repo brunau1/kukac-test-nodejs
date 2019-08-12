@@ -9,8 +9,8 @@ class ApplicationController {
 
     constructor(){
         this.application = express();
-        this.application.use(express.json());
         this.application.use(cors());
+        this.application.use(express.json());
         this.routes();
     }
 
